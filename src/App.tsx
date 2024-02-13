@@ -59,7 +59,7 @@ export function App() {
         <hr className="KaizntreeBreak--l" />
 
         <InputSelect<Employee>
-          isLoading={isLoading}
+          isLoading={!employees}
           defaultValue={EMPTY_EMPLOYEE}
           items={employees === null ? [] : [EMPTY_EMPLOYEE, ...employees]}
           label="Filter by employee"
@@ -82,17 +82,19 @@ export function App() {
         <div className="KaizntreeGrid">
           <Transactions transactions={transactions} />
 
-          {transactions !== null && paginatedTransactions?.data && (
-            <button
-              className="KaizntreeButton"
-              disabled={paginatedTransactionsUtils.loading}
-              onClick={async () => {
-                await loadAllTransactions();
-              }}
-            >
-              View More
-            </button>
-          )}
+          {transactions !== null &&
+            paginatedTransactions?.data &&
+            paginatedTransactions.nextPage && (
+              <button
+                className="KaizntreeButton"
+                disabled={paginatedTransactionsUtils.loading}
+                onClick={async () => {
+                  await loadAllTransactions();
+                }}
+              >
+                View More
+              </button>
+            )}
         </div>
       </main>
     </Fragment>

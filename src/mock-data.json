@@ -198,6 +198,19 @@
       "merchant": "Tasty Restaurant",
       "date": "8/3/2022",
       "approved": false
+    },
+    {
+      "id": "c8296067-2131-4a2c-5a39-826a6d8942c2",
+      "amount": 69.96,
+      "employee": {
+        "id": "89bd9324-04e0-4cd6-aa27-981508bd219f",
+        "firstName": "James",
+        "lastName": "Smith",
+        "extras": 2
+      },
+      "merchant": "Royal Inda Restaurant",
+      "date": "7/29/2022",
+      "approved": false
     }
   ]
 }
